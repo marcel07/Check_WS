@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Help Page</title>
+  </head>
+  <body>
+    <h1>This is the Help Page</h1>
+    <p>This is some filler text</p>
+
+    <audio src="song.mp3" type="audio/mp3" autoplay></audio>
+    <button id="stopButton">Pause</button>
+
+    <script>
+      var audio = document.getElementsByTagName('audio')[0];
+      var stopBtn = document.getElementById('stopButton');
+
+      audio.volume = 0.2;
+      stopBtn.addEventListener('click', () => {
+        if(!audio.paused) {
+          stopBtn.innerText = 'Play';
+          audio.pause();
+        } else {
+          stopBtn.innerText = 'Pause';
+          audio.play();
+        }
+      })
+    </script>
+  </body>
+</html>
